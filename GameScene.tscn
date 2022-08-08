@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Board.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameScene.gd" type="Script" id=3]
+[ext_resource path="res://Assets/clipart4679363.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.2, 0.231373, 0.309804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0784314, 0.0901961, 0.133333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0705882, 0.0627451, 0.113725, 0.45098 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 97, 101.5 )
+
+[node name="GameScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameView" type="MarginContainer" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 860.0
+margin_bottom = 860.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundBoard" type="Panel" parent="GameView"]
+margin_right = 856.0
+margin_bottom = 856.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Board" parent="GameView" instance=ExtResource( 2 )]
+
+[node name="BoardBorder" type="Panel" parent="GameView"]
+margin_right = 856.0
+margin_bottom = 856.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartOverlay" type="Panel" parent="GameView"]
+margin_right = 856.0
+margin_bottom = 856.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextOverlay" type="Label" parent="GameView/StartOverlay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Click to start
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+position = Vector2( 1381, 716 )
+scale = Vector2( 0.487179, 0.448081 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1378, 721.5 )
+shape = SubResource( 5 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 947.0
+margin_top = 49.0
+margin_right = 1458.0
+margin_bottom = 260.0
+custom_fonts/font = ExtResource( 1 )
+text = "Use W A S D to move tiles
+Good luck <3"
+align = 1
+valign = 1
+
+[connection signal="game_started" from="GameView/Board" to="." method="_on_Board_game_started"]
+[connection signal="game_won" from="GameView/Board" to="." method="_on_Board_game_won"]

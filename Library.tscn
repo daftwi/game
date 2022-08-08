@@ -1,0 +1,281 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Assets/maethavee-kay-e-3 (1).jpg" type="Texture" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/clipart4679363.png" type="Texture" id=3]
+[ext_resource path="res://Assets/KGBehindTheseHazelEyes.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/pngwing.com.png" type="Texture" id=5]
+[ext_resource path="res://InspCounterLibrary.gd" type="Script" id=6]
+[ext_resource path="res://Cat.gd" type="Script" id=7]
+[ext_resource path="res://CatOrange.gd" type="Script" id=8]
+[ext_resource path="res://CanOnStairs.gd" type="Script" id=9]
+[ext_resource path="res://OwlWithAHat.gd" type="Script" id=10]
+[ext_resource path="res://ChillOwl.gd" type="Script" id=11]
+[ext_resource path="res://CatSleeping.gd" type="Script" id=12]
+[ext_resource path="res://HigherOwlWithAHat.gd" type="Script" id=13]
+[ext_resource path="res://MainBook.gd" type="Script" id=14]
+[ext_resource path="res://Table.gd" type="Script" id=15]
+[ext_resource path="res://Globe.gd" type="Script" id=16]
+[ext_resource path="res://Assets/KEY0.CC-American-Cockroach-Insect-Drawing-German-Cockroach-Cockroach-Png-Transparent-Background.png" type="Texture" id=17]
+[ext_resource path="res://LibraryScene.gd" type="Script" id=18]
+[ext_resource path="res://FinalDial.gd" type="Script" id=19]
+[ext_resource path="res://FinalTaskDial.gd" type="Script" id=20]
+[ext_resource path="res://Font.tres" type="DynamicFont" id=21]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17, 14.75 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0.294118, 0.113725, 0.466667 )
+
+[node name="Library" type="Node"]
+script = ExtResource( 18 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 793.5, 427 )
+scale = Vector2( 0.413802, 0.380847 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Menu" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Menu"]
+position = Vector2( 57.375, 46.3437 )
+scale = Vector2( 0.192949, 0.142918 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Menu"]
+position = Vector2( 58, 47.5 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="InspCounter" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="InspCounter"]
+margin_left = 1365.0
+margin_top = 10.0
+margin_right = 1447.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0.964706, 0.921569, 0.921569, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="InspCounter"]
+position = Vector2( 1476.12, 36.8047 )
+scale = Vector2( 0.10358, 0.100847 )
+texture = ExtResource( 5 )
+
+[node name="Cat" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cat"]
+polygon = PoolVector2Array( 748, 549, 750, 550, 752, 550, 754, 546, 755, 551, 756, 553, 755, 555, 757, 557, 766, 563, 766, 564, 770, 568, 773, 572, 773, 575, 774, 579, 775, 582, 777, 586, 780, 589, 779, 591, 776, 589, 773, 585, 771, 579, 770, 581, 770, 584, 772, 586, 772, 587, 770, 588, 770, 590, 768, 589, 767, 588, 768, 587, 768, 585, 767, 582, 764, 579, 762, 576, 762, 573, 761, 571, 760, 569, 758, 570, 756, 570, 755, 569, 756, 567, 754, 566, 750, 567, 748, 565, 749, 564, 751, 565, 751, 564, 750, 561, 751, 559, 750, 557, 749, 555, 748, 553, 748, 550 )
+
+[node name="CatOrange" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatOrange"]
+polygon = PoolVector2Array( 1201, 522, 1203, 521, 1206, 520, 1209, 521, 1210, 525, 1209, 529, 1208, 530, 1207, 535, 1206, 537, 1204, 539, 1203, 541, 1202, 543, 1200, 544, 1199, 543, 1201, 542, 1202, 538, 1202, 536, 1201, 537, 1198, 542, 1198, 543, 1198, 544, 1196, 545, 1195, 544, 1196, 542, 1197, 539, 1192, 542, 1190, 544, 1190, 546, 1190, 548, 1188, 548, 1186, 547, 1187, 546, 1189, 543, 1187, 542, 1186, 541, 1185, 542, 1183, 542, 1179, 543, 1178, 544, 1177, 543, 1179, 541, 1182, 541, 1182, 540, 1182, 537, 1183, 536, 1183, 534, 1184, 533, 1185, 535, 1187, 535, 1189, 534, 1190, 534, 1194, 533, 1198, 530, 1200, 528, 1202, 527, 1205, 527, 1206, 528, 1207, 527, 1208, 526, 1208, 524, 1207, 523, 1206, 522, 1204, 522, 1203, 523, 1202, 523 )
+
+[node name="CanOnStairs" type="Area2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanOnStairs"]
+polygon = PoolVector2Array( 114, 356, 118, 360, 123, 360, 126, 357, 126, 365, 127, 365, 128, 369, 127, 371, 124, 370, 129, 376, 132, 381, 132, 386, 133, 389, 139, 389, 139, 391, 134, 393, 132, 393, 128, 393, 119, 394, 120, 390, 117, 382, 115, 373, 115, 369, 113, 369, 113, 364, 115, 366, 115, 361 )
+
+[node name="OwlWithAHat" type="Area2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OwlWithAHat"]
+polygon = PoolVector2Array( 1001, 206, 1012, 212, 1014, 219, 1010, 226, 1007, 229, 1008, 231, 1001, 231, 1000, 228, 998, 228, 998, 219, 1001, 217, 1002, 213, 1003, 212 )
+
+[node name="ChillOwl" type="Area2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChillOwl"]
+polygon = PoolVector2Array( 1256, 771, 1267, 772, 1271, 776, 1275, 788, 1286, 807, 1286, 812, 1277, 817, 1270, 817, 1269, 823, 1259, 813, 1260, 807, 1254, 801, 1253, 791, 1254, 785 )
+
+[node name="CatSleeping" type="Area2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatSleeping"]
+polygon = PoolVector2Array( 1022, 760, 1042, 759, 1049, 766, 1044, 771, 1044, 776, 1036, 780, 1027, 778, 1022, 772 )
+
+[node name="HigherOwlWithAHat" type="Area2D" parent="."]
+script = ExtResource( 13 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HigherOwlWithAHat"]
+polygon = PoolVector2Array( 626, 180, 636, 173, 639, 181, 649, 198, 656, 209, 642, 204, 637, 215, 633, 212, 636, 202, 629, 192 )
+
+[node name="MainBook" type="Area2D" parent="."]
+script = ExtResource( 14 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MainBook"]
+polygon = PoolVector2Array( 563, 386, 579, 385, 583, 406, 568, 408 )
+
+[node name="Table" type="Area2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table"]
+polygon = PoolVector2Array( 668, 320, 704, 317, 727, 439, 690, 445 )
+
+[node name="Globe" type="Area2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Globe"]
+polygon = PoolVector2Array( 426, 87, 441, 36, 465, 20, 492, 9, 525, 2, 569, 7, 583, -25, 614, -16, 644, 5, 659, 24, 678, 63, 643, 79, 647, 116, 643, 140, 632, 166, 613, 188, 593, 198, 570, 207, 547, 208, 514, 203, 495, 196, 476, 187, 459, 169, 439, 137, 430, 116 )
+
+[node name="Bugg" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bugg"]
+position = Vector2( 376, 417 )
+rotation = -0.922263
+scale = Vector2( 0.0309682, 0.0341416 )
+texture = ExtResource( 17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bugg"]
+polygon = PoolVector2Array( 364, 419, 352, 420, 366, 410, 390, 407, 395, 419, 382, 423, 373, 419, 365, 431 )
+
+[node name="Bugg2" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bugg2"]
+position = Vector2( 1209, 400 )
+rotation = -0.922263
+scale = Vector2( 0.0286218, 0.0326729 )
+texture = ExtResource( 17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bugg2"]
+position = Vector2( 29, -20 )
+polygon = PoolVector2Array( 1168, 418, 1157, 420, 1172, 412, 1196, 409, 1197, 423, 1183, 426, 1175, 422, 1166, 430 )
+
+[node name="Bugg3" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bugg3"]
+position = Vector2( 110, 264 )
+rotation = -0.922263
+scale = Vector2( 0.0331529, 0.0363923 )
+texture = ExtResource( 17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bugg3"]
+polygon = PoolVector2Array( 98, 265, 85, 266, 99, 257, 122, 254, 128, 256, 130, 269, 115, 272, 105, 266, 99, 278 )
+
+[node name="Bugg4" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bugg4"]
+position = Vector2( 799, 384 )
+rotation = -0.922263
+scale = Vector2( 0.0278154, 0.0306486 )
+texture = ExtResource( 17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bugg4"]
+position = Vector2( -5, 14 )
+polygon = PoolVector2Array( 792, 371, 777, 373, 803, 359, 815, 359, 822, 367, 821, 374, 811, 378, 805, 376, 799, 374, 795, 383 )
+
+[node name="FinalDial" type="Node" parent="."]
+script = ExtResource( 19 )
+
+[node name="FinalTask" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextBox" type="ColorRect" parent="FinalTask"]
+margin_left = 15.0
+margin_top = 719.0
+margin_right = 1514.0
+margin_bottom = 837.0
+color = Color( 0.937255, 0.894118, 0.666667, 0.560784 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FinalTask/TextBox"]
+margin_left = 16.0
+margin_top = 13.0
+margin_right = 1482.0
+margin_bottom = 107.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/mono_font = ExtResource( 21 )
+custom_fonts/normal_font = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="FinalTask/TextBox"]
+
+[node name="Label" type="Label" parent="FinalTask/TextBox"]
+margin_top = -41.0
+margin_right = 135.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 21 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="FinalTask"]
+modulate = Color( 0.262745, 1, 0.290196, 0.780392 )
+margin_left = 427.0
+margin_top = 777.0
+margin_right = 645.0
+margin_bottom = 842.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="FinalTask"]
+modulate = Color( 0.262745, 1, 0.290196, 0.780392 )
+margin_left = 852.0
+margin_top = 776.0
+margin_right = 1070.0
+margin_bottom = 841.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="input_event" from="Menu" to="Menu" method="_on_Menu_input_event"]
+[connection signal="input_event" from="Cat" to="InspCounter" method="_on_Cat_input_event"]
+[connection signal="input_event" from="Cat" to="Cat" method="_on_Cat_input_event"]
+[connection signal="input_event" from="CatOrange" to="InspCounter" method="_on_CatOrange_input_event"]
+[connection signal="input_event" from="CatOrange" to="CatOrange" method="_on_CatOrange_input_event"]
+[connection signal="input_event" from="CanOnStairs" to="InspCounter" method="_on_CanOnStairs_input_event"]
+[connection signal="input_event" from="CanOnStairs" to="CanOnStairs" method="_on_CanOnStairs_input_event"]
+[connection signal="input_event" from="OwlWithAHat" to="InspCounter" method="_on_OwlWithAHat_input_event"]
+[connection signal="input_event" from="OwlWithAHat" to="OwlWithAHat" method="_on_OwlWithAHat_input_event"]
+[connection signal="input_event" from="ChillOwl" to="InspCounter" method="_on_ChillOwl_input_event"]
+[connection signal="input_event" from="ChillOwl" to="ChillOwl" method="_on_ChillOwl_input_event"]
+[connection signal="input_event" from="CatSleeping" to="InspCounter" method="_on_CatSleeping_input_event"]
+[connection signal="input_event" from="CatSleeping" to="CatSleeping" method="_on_CatSleeping_input_event"]
+[connection signal="input_event" from="HigherOwlWithAHat" to="InspCounter" method="_on_HigherOwlWithAHat_input_event"]
+[connection signal="input_event" from="HigherOwlWithAHat" to="HigherOwlWithAHat" method="_on_HigherOwlWithAHat_input_event"]
+[connection signal="input_event" from="MainBook" to="InspCounter" method="_on_MainBook_input_event"]
+[connection signal="input_event" from="MainBook" to="MainBook" method="_on_MainBook_input_event"]
+[connection signal="input_event" from="Table" to="InspCounter" method="_on_Table_input_event"]
+[connection signal="input_event" from="Table" to="Table" method="_on_Table_input_event"]
+[connection signal="input_event" from="Globe" to="InspCounter" method="_on_Globe_input_event"]
+[connection signal="input_event" from="Globe" to="Globe" method="_on_Globe_input_event"]
+[connection signal="input_event" from="Bugg" to="." method="_on_Bugg_input_event"]
+[connection signal="input_event" from="Bugg2" to="." method="_on_Bugg2_input_event"]
+[connection signal="input_event" from="Bugg3" to="." method="_on_Bugg3_input_event"]
+[connection signal="input_event" from="Bugg4" to="." method="_on_Bugg4_input_event"]
+[connection signal="pressed" from="FinalTask/Button" to="FinalTask" method="_on_Button_pressed"]
+[connection signal="pressed" from="FinalTask/Button2" to="FinalTask" method="_on_Button2_pressed"]

@@ -1,0 +1,144 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Ethlu9nVgAAWY4U.jpeg" type="Texture" id=1]
+[ext_resource path="res://Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://CompileFind.gd" type="Script" id=3]
+[ext_resource path="res://DialogueCom.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.294118, 0.113725, 0.466667 )
+
+[node name="Compiler" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 767.5, 431.5 )
+scale = Vector2( 0.790206, 0.789908 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DialogueCom" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="CompileFind" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextBox" type="ColorRect" parent="CompileFind"]
+margin_left = 15.0
+margin_top = 719.0
+margin_right = 1514.0
+margin_bottom = 837.0
+color = Color( 0.937255, 0.894118, 0.666667, 0.560784 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CompileFind/TextBox"]
+margin_left = 16.0
+margin_top = 13.0
+margin_right = 1482.0
+margin_bottom = 107.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/mono_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="CompileFind/TextBox"]
+
+[node name="Label" type="Label" parent="CompileFind/TextBox"]
+margin_top = -41.0
+margin_right = 135.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreatureFirst" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureFirst"]
+polygon = PoolVector2Array( 907, 125, 900, 117, 930, 110, 948, 112, 970, 125, 961, 135, 951, 130, 954, 139, 966, 162, 951, 183, 937, 181, 937, 166, 932, 155, 932, 145, 925, 139 )
+
+[node name="CreatureSecond" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureSecond"]
+polygon = PoolVector2Array( 1344, 401, 1348, 426, 1368, 431, 1381, 410, 1388, 438, 1374, 466, 1361, 476, 1374, 494, 1377, 515, 1370, 518, 1360, 510, 1350, 519, 1343, 531, 1335, 531, 1329, 518, 1324, 505, 1313, 502, 1312, 492, 1315, 484, 1326, 474, 1336, 473, 1336, 468, 1329, 461, 1328, 451, 1328, 441, 1325, 429, 1327, 419, 1334, 411 )
+
+[node name="CreatureThird" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureThird"]
+polygon = PoolVector2Array( 1087, 370, 1084, 388, 1089, 405, 1093, 409, 1121, 416, 1138, 402, 1133, 397, 1127, 381, 1121, 382, 1100, 379 )
+
+[node name="CreatureForth" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureForth"]
+polygon = PoolVector2Array( 1028, 376, 1049, 379, 1048, 392, 1055, 391, 1065, 394, 1071, 384, 1081, 387, 1084, 394, 1075, 399, 1068, 417, 1064, 430, 1045, 435, 1030, 430, 1033, 424, 1040, 419, 1034, 413, 1035, 405, 1038, 399, 1036, 397, 1036, 390, 1036, 384 )
+
+[node name="CreatureFifth" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureFifth"]
+polygon = PoolVector2Array( 969, 390, 975, 412, 985, 412, 993, 418, 1003, 403, 1005, 415, 1005, 429, 1002, 435, 1012, 433, 1017, 435, 1017, 441, 1010, 442, 1005, 450, 993, 457, 995, 465, 998, 476, 992, 479, 985, 499, 981, 485, 978, 485, 973, 494, 971, 481, 967, 471, 970, 459, 971, 451, 963, 443, 959, 433, 961, 424, 958, 414 )
+
+[node name="CreatureSixth" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureSixth"]
+polygon = PoolVector2Array( 712, 447, 701, 452, 697, 442, 701, 429, 709, 425, 720, 428, 732, 421, 738, 421, 747, 417, 757, 421, 759, 432, 754, 435, 752, 446, 748, 456, 752, 460, 762, 453, 760, 444, 765, 438, 774, 438, 780, 443, 776, 465, 770, 468, 764, 464, 756, 469, 749, 466, 757, 480, 755, 484, 755, 489, 760, 499, 757, 501, 751, 495, 745, 496, 749, 505, 740, 503, 737, 497, 730, 495, 726, 488, 721, 486, 720, 480, 715, 473, 715, 468, 715, 462, 727, 458, 721, 454 )
+
+[node name="CreatureSeventh" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureSeventh"]
+polygon = PoolVector2Array( 868, 472, 871, 485, 881, 478, 895, 478, 902, 483, 908, 481, 907, 472, 913, 476, 916, 483, 915, 487, 908, 495, 908, 502, 915, 495, 921, 497, 920, 503, 901, 518, 898, 526, 892, 526, 882, 522, 878, 523, 889, 530, 886, 538, 876, 533, 872, 528, 868, 523, 870, 518, 876, 514, 870, 507, 868, 500, 863, 495, 858, 490, 860, 479 )
+
+[node name="CreatureEighth" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureEighth"]
+polygon = PoolVector2Array( 997, 551, 993, 551, 982, 563, 979, 552, 986, 543, 994, 538, 1000, 539, 1007, 543, 1016, 540, 1023, 541, 1032, 545, 1042, 542, 1051, 545, 1056, 553, 1058, 561, 1053, 570, 1048, 564, 1045, 558, 1044, 550, 1040, 552, 1037, 567, 1030, 575, 1029, 587, 1034, 596, 1033, 603, 1035, 606, 1038, 605, 1035, 614, 1027, 613, 1014, 613, 1005, 622, 1002, 618, 1007, 609, 1003, 604, 1005, 598, 1001, 596, 991, 603, 972, 596, 971, 579, 991, 568, 1000, 569, 995, 563, 994, 556 )
+
+[node name="CreatureNinth" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureNinth"]
+polygon = PoolVector2Array( 1175, 612, 1167, 597, 1162, 628, 1179, 647, 1180, 670, 1192, 677, 1200, 697, 1213, 700, 1232, 702, 1230, 688, 1236, 680, 1227, 677, 1224, 674, 1232, 667, 1235, 658, 1236, 650, 1232, 645, 1232, 639, 1229, 636, 1220, 645, 1209, 645, 1221, 630, 1218, 618, 1213, 611, 1209, 576, 1199, 608, 1191, 608 )
+
+[node name="CreatureTenth" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureTenth"]
+polygon = PoolVector2Array( 1014, 614, 1011, 618, 1017, 623, 1013, 640, 1020, 655, 1017, 663, 1008, 667, 1006, 672, 994, 681, 996, 694, 985, 707, 993, 708, 992, 718, 1004, 705, 1028, 705, 1040, 696, 1046, 686, 1050, 671, 1052, 659, 1064, 646, 1072, 645, 1098, 650, 1060, 631, 1038, 616, 1027, 621 )
+
+[node name="CreatureEleventh" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureEleventh"]
+polygon = PoolVector2Array( 507, 626, 495, 640, 506, 649, 540, 643, 514, 661, 501, 678, 511, 692, 528, 698, 512, 702, 507, 717, 488, 735, 488, 719, 475, 710, 476, 696, 468, 700, 468, 710, 453, 708, 448, 687, 456, 679, 468, 678, 470, 688, 482, 682, 474, 680, 465, 671, 464, 657, 470, 649, 480, 637, 490, 629 )
+
+[node name="CreatureTwelwth" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureTwelwth"]
+polygon = PoolVector2Array( 356, 702, 356, 728, 351, 742, 352, 752, 363, 761, 363, 769, 357, 798, 365, 803, 376, 811, 374, 825, 393, 810, 400, 796, 400, 791, 395, 776, 410, 778, 422, 759, 413, 755, 403, 757, 401, 765, 394, 761, 405, 742, 397, 725, 383, 718, 369, 717 )
+
+[node name="CreatureThirteenth" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CreatureThirteenth"]
+polygon = PoolVector2Array( 56, 734, 76, 716, 83, 716, 83, 726, 92, 724, 105, 715, 123, 715, 127, 711, 122, 703, 138, 701, 150, 702, 137, 709, 138, 719, 135, 729, 137, 740, 130, 756, 140, 766, 147, 773, 142, 785, 147, 788, 147, 796, 148, 818, 138, 807, 131, 810, 132, 826, 120, 810, 109, 805, 106, 797, 100, 791, 99, 776, 104, 765, 95, 758, 85, 752, 82, 746, 74, 741, 73, 735 )
+
+[connection signal="tween_completed" from="CompileFind/TextBox/Tween" to="CompileFind" method="_on_Tween_tween_completed"]
+[connection signal="input_event" from="CreatureFirst" to="CompileFind" method="_on_CreatureFirst_input_event"]
+[connection signal="input_event" from="CreatureSecond" to="CompileFind" method="_on_CreatureSecond_input_event"]
+[connection signal="input_event" from="CreatureThird" to="CompileFind" method="_on_CreatureThird_input_event"]
+[connection signal="input_event" from="CreatureForth" to="CompileFind" method="_on_CreatureForth_input_event"]
+[connection signal="input_event" from="CreatureFifth" to="CompileFind" method="_on_CreatureFifth_input_event"]
+[connection signal="input_event" from="CreatureSixth" to="CompileFind" method="_on_CreatureSixth_input_event"]
+[connection signal="input_event" from="CreatureSeventh" to="CompileFind" method="_on_CreatureSeventh_input_event"]
+[connection signal="input_event" from="CreatureEighth" to="CompileFind" method="_on_CreatureEighth_input_event"]
+[connection signal="input_event" from="CreatureNinth" to="CompileFind" method="_on_CreatureNinth_input_event"]
+[connection signal="input_event" from="CreatureTenth" to="CompileFind" method="_on_CreatureTenth_input_event"]
+[connection signal="input_event" from="CreatureEleventh" to="CompileFind" method="_on_CreatureEleventh_input_event"]
+[connection signal="input_event" from="CreatureTwelwth" to="CompileFind" method="_on_CreatureTwelwth_input_event"]
+[connection signal="input_event" from="CreatureThirteenth" to="CompileFind" method="_on_CreatureThirteenth_input_event"]

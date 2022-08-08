@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/menu.png" type="Texture" id=1]
+[ext_resource path="res://GoMainMenu.gd" type="Script" id=2]
+[ext_resource path="res://ChangeLocation.gd" type="Script" id=3]
+[ext_resource path="res://ContinueFromMenu.gd" type="Script" id=4]
+[ext_resource path="res://SaveProgress.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 425.5, 54.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 425.25, 57 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 424.5, 57.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 427, 56.5 )
+
+[node name="Node" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 767, 432.125 )
+scale = Vector2( 1.1363, 1.27209 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Continue" type="Area2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Continue"]
+position = Vector2( 761.5, 213.5 )
+shape = SubResource( 1 )
+
+[node name="SaveProgress" type="Area2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaveProgress"]
+position = Vector2( 758.75, 364 )
+shape = SubResource( 2 )
+
+[node name="ChangeLocation" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeLocation"]
+position = Vector2( 759.5, 518.5 )
+shape = SubResource( 3 )
+
+[node name="GoMainMenu" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoMainMenu"]
+position = Vector2( 763, 674.5 )
+shape = SubResource( 4 )
+
+[connection signal="input_event" from="Continue" to="Continue" method="_on_Continue_input_event"]
+[connection signal="input_event" from="SaveProgress" to="SaveProgress" method="_on_SaveProgress_input_event"]
+[connection signal="input_event" from="ChangeLocation" to="ChangeLocation" method="_on_ChangeLocation_input_event"]
+[connection signal="input_event" from="GoMainMenu" to="GoMainMenu" method="_on_GoMainMenu_input_event"]

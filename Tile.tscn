@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/1b1a79aaec826b602641f9f485e2a5c1.jpg" type="Texture" id=2]
+[ext_resource path="res://Tile.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+border_blend = true
+
+[node name="Tile" type="TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2.70567, 2.72161 )
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+vframes = 4
+
+[node name="Number" type="Control" parent="."]
+margin_right = 382.0
+margin_bottom = 216.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Number"]
+margin_right = 382.0
+margin_bottom = 216.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.243137 )
+
+[node name="Label" type="Label" parent="Number"]
+margin_right = 382.0
+margin_bottom = 216.0
+custom_fonts/font = ExtResource( 1 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Border" type="Panel" parent="."]
+margin_right = 382.0
+margin_bottom = 216.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="." to="." method="_on_Tile_pressed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

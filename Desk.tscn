@@ -1,0 +1,239 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Assets/1291311cde2f29e5162d29d7df3f0579.jpg" type="Texture" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/clipart4679363.png" type="Texture" id=3]
+[ext_resource path="res://Assets/KGBehindTheseHazelEyes.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/pngwing.com.png" type="Texture" id=5]
+[ext_resource path="res://InspCounterDesk.gd" type="Script" id=6]
+[ext_resource path="res://Computer.gd" type="Script" id=7]
+[ext_resource path="res://CatOnTable.gd" type="Script" id=8]
+[ext_resource path="res://Font.tres" type="DynamicFont" id=9]
+[ext_resource path="res://DialogueD.gd" type="Script" id=10]
+[ext_resource path="res://InspoDesk.gd" type="Script" id=11]
+[ext_resource path="res://CatWantOnBed.gd" type="Script" id=12]
+[ext_resource path="res://Drink.gd" type="Script" id=13]
+[ext_resource path="res://Timer.gd" type="Script" id=14]
+[ext_resource path="res://Books.gd" type="Script" id=15]
+[ext_resource path="res://Pens.gd" type="Script" id=16]
+[ext_resource path="res://UnoPeno.gd" type="Script" id=17]
+[ext_resource path="res://Note.gd" type="Script" id=18]
+[ext_resource path="res://PlantD.gd" type="Script" id=19]
+[ext_resource path="res://Plan.gd" type="Script" id=20]
+[ext_resource path="res://Assets/KEY0.CC-American-Cockroach-Insect-Drawing-German-Cockroach-Cockroach-Png-Transparent-Background.png" type="Texture" id=21]
+[ext_resource path="res://DeskScene.gd" type="Script" id=22]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17, 14.75 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 4 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 22 )
+
+[node name="Dialogue" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 767, 179.5 )
+scale = Vector2( 2.72469, 1.75964 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Menu" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Menu"]
+position = Vector2( 57.375, 46.3437 )
+scale = Vector2( 0.192949, 0.142918 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Menu"]
+position = Vector2( 58, 47.5 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="InspCounter" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="InspCounter"]
+margin_left = 1365.0
+margin_top = 10.0
+margin_right = 1447.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0.964706, 0.921569, 0.921569, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="InspCounter"]
+position = Vector2( 1476.12, 36.8047 )
+scale = Vector2( 0.10358, 0.100847 )
+texture = ExtResource( 5 )
+
+[node name="InspoDesk" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextBox" type="ColorRect" parent="InspoDesk"]
+margin_left = 15.0
+margin_top = 719.0
+margin_right = 1514.0
+margin_bottom = 837.0
+color = Color( 0.937255, 0.894118, 0.666667, 0.560784 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InspoDesk/TextBox"]
+margin_left = 16.0
+margin_top = 13.0
+margin_right = 1482.0
+margin_bottom = 107.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/mono_font = ExtResource( 9 )
+custom_fonts/normal_font = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="InspoDesk/TextBox"]
+
+[node name="Computer" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Computer"]
+polygon = PoolVector2Array( 531, 488, 438, 265, 902, 160, 989, 368, 1279, 487, 814, 644, 539, 511 )
+
+[node name="CatOnTable" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatOnTable"]
+polygon = PoolVector2Array( 132, 765, 130, 737, 143, 713, 157, 690, 181, 680, 200, 672, 223, 669, 237, 659, 255, 649, 263, 629, 283, 615, 321, 606, 369, 607, 362, 618, 373, 629, 371, 646, 379, 656, 373, 672, 356, 681, 331, 681, 336, 693, 329, 714, 317, 729, 314, 770, 339, 782, 342, 798, 327, 814, 265, 825, 225, 824, 180, 819, 138, 808, 120, 790, 121, 775 )
+
+[node name="CatWantOnBed" type="Area2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatWantOnBed"]
+polygon = PoolVector2Array( 1518, 848, 1382, 671, 1356, 593, 1341, 626, 1269, 630, 1241, 608, 1215, 684, 1245, 702, 1196, 701, 1077, 692, 1053, 681, 1040, 699, 1049, 714, 1209, 762, 1274, 818, 1284, 857, 1521, 863 )
+
+[node name="Drink" type="Area2D" parent="."]
+script = ExtResource( 13 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drink"]
+polygon = PoolVector2Array( 1380, 406, 1387, 420, 1350, 443, 1312, 449, 1274, 449, 1223, 441, 1204, 431, 1198, 414, 1210, 409, 1211, 402, 1207, 388, 1207, 373, 1208, 353, 1214, 328, 1223, 314, 1245, 304, 1274, 301, 1314, 301, 1334, 303, 1377, 250, 1392, 252, 1392, 260, 1351, 311, 1364, 313, 1378, 379, 1379, 399, 1373, 407 )
+
+[node name="Timer" type="Area2D" parent="."]
+script = ExtResource( 14 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Timer"]
+polygon = PoolVector2Array( 322, 477, 301, 471, 298, 415, 363, 393, 388, 399, 392, 404, 399, 450 )
+
+[node name="Books" type="Area2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Books"]
+polygon = PoolVector2Array( 344, 686, 519, 608, 787, 695, 787, 725, 623, 813, 341, 716 )
+
+[node name="Pens" type="Area2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pens"]
+polygon = PoolVector2Array( 201, 421, 196, 308, 203, 278, 217, 259, 269, 260, 285, 203, 341, 211, 323, 270, 342, 319, 339, 384, 293, 409, 285, 444, 239, 446 )
+
+[node name="UnoPeno" type="Area2D" parent="."]
+script = ExtResource( 17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UnoPeno"]
+polygon = PoolVector2Array( 1280, 549, 1292, 550, 1289, 558, 1182, 606, 1189, 609, 1159, 628, 1115, 645, 1091, 645, 1086, 635, 1094, 625 )
+
+[node name="Note" type="Area2D" parent="."]
+script = ExtResource( 18 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Note"]
+polygon = PoolVector2Array( 1211, 135, 1248, 128, 1257, 118, 1270, 123, 1299, 120, 1304, 185, 1298, 191, 1220, 206 )
+
+[node name="Plant" type="Area2D" parent="."]
+script = ExtResource( 19 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plant"]
+polygon = PoolVector2Array( -1, 445, 92, 474, 95, 481, 87, 487, 103, 497, 135, 492, 152, 486, 160, 471, 166, 461, 169, 450, 171, 384, 177, 373, 179, 362, 176, 351, 168, 345, 189, 344, 195, 337, 191, 314, 186, 309, 180, 293, 193, 280, 199, 273, 199, 263, 198, 256, 168, 255, 174, 245, 159, 233, 134, 230, 112, 236, 109, 246, 83, 248, 59, 210, 31, 224, 28, 247, 32, 260, -2, 248 )
+
+[node name="Plan" type="Area2D" parent="."]
+script = ExtResource( 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plan"]
+polygon = PoolVector2Array( 858, -1, 858, 81, 832, 77, 800, 89, 795, 112, 578, 152, 572, 0 )
+
+[node name="Bugg" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bugg"]
+position = Vector2( 186, 441 )
+scale = Vector2( 0.0268326, 0.029395 )
+texture = ExtResource( 21 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bugg"]
+polygon = PoolVector2Array( 182, 440, 171, 441, 176, 434, 172, 426, 189, 434, 201, 448, 194, 456, 184, 449 )
+
+[node name="Bugg2" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bugg2"]
+position = Vector2( 1487, 205 )
+rotation = -0.672376
+scale = Vector2( 0.0247811, 0.0276297 )
+texture = ExtResource( 21 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bugg2"]
+polygon = PoolVector2Array( 1477, 203, 1466, 204, 1474, 199, 1483, 199, 1493, 199, 1497, 200, 1502, 201, 1502, 213, 1485, 211, 1484, 205, 1477, 215, 1476, 209 )
+
+[node name="Bugg3" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bugg3"]
+position = Vector2( 435, 660 )
+scale = Vector2( 0.018652, 0.0181221 )
+texture = ExtResource( 21 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bugg3"]
+polygon = PoolVector2Array( 438, 653, 423, 650, 428, 656, 424, 661, 431, 659, 433, 666, 438, 668, 444, 669, 446, 663, 442, 661, 440, 656 )
+
+[connection signal="input_event" from="Menu" to="Menu" method="_on_Menu_input_event"]
+[connection signal="input_event" from="Menu" to="InspoDesk" method="_on_Menu_input_event"]
+[connection signal="input_event" from="Computer" to="Computer" method="_on_Computer_input_event"]
+[connection signal="input_event" from="CatOnTable" to="InspCounter" method="_on_CatOnTable_input_event"]
+[connection signal="input_event" from="CatOnTable" to="CatOnTable" method="_on_CatOnTable_input_event"]
+[connection signal="input_event" from="CatWantOnBed" to="InspCounter" method="_on_CatWantOnBed_input_event"]
+[connection signal="input_event" from="CatWantOnBed" to="CatWantOnBed" method="_on_CatWantOnBed_input_event"]
+[connection signal="input_event" from="Drink" to="InspCounter" method="_on_Drink_input_event"]
+[connection signal="input_event" from="Drink" to="Drink" method="_on_Drink_input_event"]
+[connection signal="input_event" from="Timer" to="InspCounter" method="_on_Timer_input_event"]
+[connection signal="input_event" from="Timer" to="Timer" method="_on_Timer_input_event"]
+[connection signal="input_event" from="Books" to="InspCounter" method="_on_Books_input_event"]
+[connection signal="input_event" from="Books" to="Books" method="_on_Books_input_event"]
+[connection signal="input_event" from="Pens" to="InspCounter" method="_on_Pens_input_event"]
+[connection signal="input_event" from="Pens" to="Pens" method="_on_Pens_input_event"]
+[connection signal="input_event" from="UnoPeno" to="InspCounter" method="_on_UnoPeno_input_event"]
+[connection signal="input_event" from="UnoPeno" to="UnoPeno" method="_on_UnoPeno_input_event"]
+[connection signal="input_event" from="Note" to="InspCounter" method="_on_Note_input_event"]
+[connection signal="input_event" from="Note" to="Note" method="_on_Note_input_event"]
+[connection signal="input_event" from="Plant" to="InspCounter" method="_on_Plant_input_event"]
+[connection signal="input_event" from="Plant" to="Plant" method="_on_Plant_input_event"]
+[connection signal="input_event" from="Plan" to="InspCounter" method="_on_Plan_input_event"]
+[connection signal="input_event" from="Plan" to="Plan" method="_on_Plan_input_event"]
+[connection signal="input_event" from="Bugg" to="." method="_on_Bugg_input_event"]
+[connection signal="input_event" from="Bugg2" to="." method="_on_Bugg2_input_event"]
+[connection signal="input_event" from="Bugg3" to="." method="_on_Bugg3_input_event"]

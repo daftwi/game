@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Plain-Black-Wallpaper-Full-Hd-dodskypict.jpg" type="Texture" id=1]
+[ext_resource path="res://Died.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 768, 431.5 )
+
+[node name="YouDied" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 873.5, 494.5 )
+scale = Vector2( 1.51649, 1.37361 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Died" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Died"]
+position = Vector2( 766, 432.5 )
+shape = SubResource( 1 )
+
+[connection signal="input_event" from="Died" to="Died" method="_on_Died_input_event"]

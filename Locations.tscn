@@ -1,0 +1,155 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/locations.png" type="Texture" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=2]
+[ext_resource path="res://GoBedroom.gd" type="Script" id=3]
+[ext_resource path="res://Desk.gd" type="Script" id=4]
+[ext_resource path="res://Bathroom.gd" type="Script" id=5]
+[ext_resource path="res://Library.gd" type="Script" id=6]
+[ext_resource path="res://Font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://BedL.gd" type="Script" id=8]
+[ext_resource path="res://BathL.gd" type="Script" id=9]
+[ext_resource path="res://DeskL.gd" type="Script" id=10]
+[ext_resource path="res://LibL.gd" type="Script" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 363, 53 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 365.5, 54 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 362.5, 54.25 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 363, 56.5 )
+
+[node name="Node" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 767, 432 )
+scale = Vector2( 1.13883, 1.27622 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Menu" type="Area2D" parent="."]
+position = Vector2( 177, 136 )
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Menu"]
+polygon = PoolVector2Array( -171, -4, 24, -105, 26, -55, 232, -55, 231, 54, 26, 52, 27, 103 )
+
+[node name="Bedroom" type="Area2D" parent="."]
+position = Vector2( 38, -79 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bedroom"]
+position = Vector2( 738, 367 )
+shape = SubResource( 1 )
+
+[node name="Bathroom" type="Area2D" parent="."]
+position = Vector2( 45, -107 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bathroom"]
+position = Vector2( 737.5, 532 )
+shape = SubResource( 2 )
+
+[node name="Desk" type="Area2D" parent="."]
+position = Vector2( 89, -54 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk"]
+position = Vector2( 693.5, 614.75 )
+shape = SubResource( 3 )
+
+[node name="Library" type="Area2D" parent="."]
+position = Vector2( 174, -45 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Library"]
+position = Vector2( 606, 741.5 )
+shape = SubResource( 4 )
+
+[node name="BedL" type="Control" parent="."]
+margin_left = 1165.0
+margin_top = 258.0
+margin_right = 1314.0
+margin_bottom = 336.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BedL"]
+margin_top = -5.0
+margin_right = 175.0
+margin_bottom = 70.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BathL" type="Control" parent="."]
+margin_left = 1171.0
+margin_top = 397.0
+margin_right = 1289.0
+margin_bottom = 462.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BathL"]
+margin_right = 136.0
+margin_bottom = 41.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeskL" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DeskL"]
+margin_left = 1165.0
+margin_top = 517.0
+margin_right = 1310.0
+margin_bottom = 603.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+valign = 1
+
+[node name="LibL" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LibL"]
+margin_left = 1153.0
+margin_top = 647.0
+margin_right = 1307.0
+margin_bottom = 750.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+valign = 1
+
+[connection signal="input_event" from="Menu" to="Menu" method="_on_Menu_input_event"]
+[connection signal="input_event" from="Bedroom" to="Bedroom" method="_on_Bedroom_input_event"]
+[connection signal="input_event" from="Bathroom" to="Bathroom" method="_on_Bathroom_input_event"]
+[connection signal="input_event" from="Desk" to="Desk" method="_on_Desk_input_event"]
+[connection signal="input_event" from="Library" to="Library" method="_on_Library_input_event"]

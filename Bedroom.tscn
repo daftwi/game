@@ -1,0 +1,384 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://Assets/EreUBcGXcAE50gf.jpg" type="Texture" id=1]
+[ext_resource path="res://Dialogue.gd" type="Script" id=2]
+[ext_resource path="res://Window.gd" type="Script" id=3]
+[ext_resource path="res://Inspo.gd" type="Script" id=4]
+[ext_resource path="res://Font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://CatOnBed.gd" type="Script" id=6]
+[ext_resource path="res://Candles.gd" type="Script" id=7]
+[ext_resource path="res://Picture.gd" type="Script" id=8]
+[ext_resource path="res://Medal.gd" type="Script" id=9]
+[ext_resource path="res://Orb.gd" type="Script" id=10]
+[ext_resource path="res://CatOnChair.gd" type="Script" id=11]
+[ext_resource path="res://Assets/KGBehindTheseHazelEyes.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Assets/pngwing.com.png" type="Texture" id=13]
+[ext_resource path="res://InspCounter.gd" type="Script" id=14]
+[ext_resource path="res://Assets/clipart4679363.png" type="Texture" id=15]
+[ext_resource path="res://Menu.gd" type="Script" id=16]
+[ext_resource path="res://Plants.gd" type="Script" id=17]
+[ext_resource path="res://Easel.gd" type="Script" id=18]
+[ext_resource path="res://Matryoshka.gd" type="Script" id=19]
+[ext_resource path="res://Skull.gd" type="Script" id=20]
+[ext_resource path="res://Couldron.gd" type="Script" id=21]
+[ext_resource path="res://Crystals.gd" type="Script" id=22]
+[ext_resource path="res://Tea.gd" type="Script" id=23]
+[ext_resource path="res://Clock.gd" type="Script" id=24]
+[ext_resource path="res://Ingridients.gd" type="Script" id=25]
+[ext_resource path="res://MoonPhase.gd" type="Script" id=26]
+[ext_resource path="res://Map.gd" type="Script" id=27]
+[ext_resource path="res://Assets/KEY0.CC-American-Cockroach-Insect-Drawing-German-Cockroach-Cockroach-Png-Transparent-Background.png" type="Texture" id=28]
+[ext_resource path="res://BedroomScene.gd" type="Script" id=29]
+[ext_resource path="res://EnterTheUnknown.gd" type="Script" id=30]
+
+[sub_resource type="DynamicFont" id=8]
+size = 48
+font_data = ExtResource( 12 )
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 148.875
+height = 86.2499
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.625, 12.375 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 27.9375, 10.25 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 32.0624
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 21.5625, 25.6875 )
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 16.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 15.0
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 17, 14.75 )
+
+[node name="Bedroom" type="Node"]
+script = ExtResource( 29 )
+
+[node name="Dialogue" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 767, 432 )
+scale = Vector2( 0.749023, 0.60251 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="InspCounter" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="InspCounter"]
+margin_left = 1365.0
+margin_top = 10.0
+margin_right = 1447.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0.964706, 0.921569, 0.921569, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="InspCounter"]
+position = Vector2( 1476.12, 36.8047 )
+scale = Vector2( 0.10358, 0.100847 )
+texture = ExtResource( 13 )
+
+[node name="Inspo" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextBox" type="ColorRect" parent="Inspo"]
+margin_left = 15.0
+margin_top = 719.0
+margin_right = 1514.0
+margin_bottom = 837.0
+color = Color( 0.937255, 0.894118, 0.666667, 0.560784 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Inspo/TextBox"]
+margin_left = 16.0
+margin_top = 13.0
+margin_right = 1482.0
+margin_bottom = 107.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/mono_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Inspo/TextBox"]
+
+[node name="Window" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
+position = Vector2( 798, 231 )
+rotation = 1.57281
+shape = SubResource( 10 )
+
+[node name="CatOnBed" type="Area2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatOnBed"]
+position = Vector2( 1120.38, 392.625 )
+shape = SubResource( 2 )
+
+[node name="CatOnChair" type="Area2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatOnChair"]
+position = Vector2( 582.063, 405.75 )
+shape = SubResource( 3 )
+
+[node name="Orb" type="Area2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orb"]
+position = Vector2( 645, 583 )
+shape = SubResource( 4 )
+
+[node name="Candles" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Candles"]
+position = Vector2( 552.438, 567.313 )
+shape = SubResource( 5 )
+
+[node name="Picture" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Picture"]
+position = Vector2( 182, 256 )
+shape = SubResource( 6 )
+
+[node name="Medal" type="Area2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Medal"]
+position = Vector2( 179, 310 )
+shape = SubResource( 7 )
+
+[node name="Menu" type="Area2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="Sprite" type="Sprite" parent="Menu"]
+position = Vector2( 57.375, 46.3437 )
+scale = Vector2( 0.192949, 0.142918 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Menu"]
+position = Vector2( 58, 47.5 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 9 )
+
+[node name="Plants" type="Area2D" parent="."]
+script = ExtResource( 17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plants"]
+polygon = PoolVector2Array( 259, 335, 237, 327, 206, 342, 183, 361, 193, 375, 173, 380, 172, 391, 199, 402, 195, 418, 170, 443, 171, 450, 195, 439, 192, 450, 206, 448, 202, 462, 207, 461, 224, 455, 228, 460, 216, 464, 218, 496, 224, 511, 235, 530, 259, 535, 307, 511, 304, 394, 270, 382, 274, 338 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Plants"]
+polygon = PoolVector2Array( 357, 379, 377, 410, 365, 414, 359, 429, 358, 489, 369, 487, 372, 516, 380, 529, 397, 538, 418, 536, 429, 533, 440, 516, 442, 501, 440, 478, 452, 464, 440, 459, 466, 441, 435, 448, 437, 423, 442, 415, 429, 415, 434, 393, 417, 390, 412, 392, 402, 392, 392, 393, 390, 398 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Plants"]
+polygon = PoolVector2Array( 653, 342, 687, 364, 734, 380, 716, 388, 747, 408, 718, 410, 729, 414, 723, 430, 718, 451, 691, 464, 664, 458, 661, 443, 653, 429, 667, 426, 674, 410, 655, 388, 648, 372 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Plants"]
+polygon = PoolVector2Array( 814, 381, 811, 392, 826, 394, 825, 422, 826, 443, 839, 465, 842, 428, 862, 431, 860, 442, 866, 445, 869, 430, 877, 428, 876, 453, 881, 456, 879, 390, 887, 392, 879, 379 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Plants"]
+polygon = PoolVector2Array( 585, 84, 577, 149, 565, 156, 552, 177, 547, 194, 566, 207, 583, 258, 589, 242, 588, 218, 609, 199, 607, 166 )
+
+[node name="Easel" type="Area2D" parent="."]
+script = ExtResource( 18 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Easel"]
+polygon = PoolVector2Array( 24, 565, 10, 562, 19, 393, 1, 421, 1, 267, 3, 248, 14, 248, 19, 265, 72, 261, 105, 361, 121, 370, 123, 374, 93, 379, 113, 435, 99, 440, 77, 382, 27, 389 )
+
+[node name="Matryoshka" type="Area2D" parent="."]
+script = ExtResource( 19 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Matryoshka"]
+polygon = PoolVector2Array( 37, 208, 29, 208, 23, 201, 24, 194, 28, 189, 28, 182, 33, 179, 39, 181, 41, 186, 41, 191, 43, 195 )
+
+[node name="Skull" type="Area2D" parent="."]
+script = ExtResource( 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Skull"]
+polygon = PoolVector2Array( 93, 131, 141, 132, 146, 122, 143, 102, 134, 82, 102, 82, 75, 103, 57, 133, 76, 143 )
+
+[node name="Couldron" type="Area2D" parent="."]
+script = ExtResource( 21 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Couldron"]
+polygon = PoolVector2Array( 832, 573, 829, 581, 831, 584, 841, 581, 862, 584, 883, 583, 895, 579, 908, 584, 913, 579, 905, 571, 914, 557, 912, 543, 906, 534, 910, 525, 909, 520, 891, 515, 874, 510, 849, 513, 831, 518, 809, 514, 808, 521, 823, 523, 825, 532, 821, 549, 822, 561 )
+
+[node name="Crystals" type="Area2D" parent="."]
+script = ExtResource( 22 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Crystals"]
+polygon = PoolVector2Array( 788, 576, 782, 563, 796, 568, 792, 558, 799, 548, 808, 554, 816, 568, 819, 574, 809, 584 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Crystals"]
+polygon = PoolVector2Array( 730, 560, 742, 549, 751, 550, 775, 559, 776, 567, 768, 571, 736, 575, 727, 571 )
+
+[node name="Tea" type="Area2D" parent="."]
+script = ExtResource( 23 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tea"]
+polygon = PoolVector2Array( 776, 691, 790, 670, 825, 672, 842, 691, 837, 703, 807, 711, 774, 699 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tea"]
+polygon = PoolVector2Array( 369, 646, 425, 631, 429, 625, 465, 607, 491, 609, 506, 608, 524, 614, 561, 645, 562, 656, 429, 697, 411, 687, 414, 673, 397, 673, 372, 658 )
+
+[node name="Clock" type="Area2D" parent="."]
+script = ExtResource( 24 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Clock"]
+polygon = PoolVector2Array( 970, 367, 967, 358, 972, 348, 990, 350, 993, 355, 994, 366, 990, 372, 975, 373 )
+
+[node name="Ingridients" type="Area2D" parent="."]
+script = ExtResource( 25 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ingridients"]
+polygon = PoolVector2Array( 237, 131, 236, 60, 301, 58, 302, 133 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ingridients"]
+polygon = PoolVector2Array( 664, 659, 663, 636, 669, 630, 682, 630, 689, 634, 689, 658, 686, 662, 677, 664, 668, 662 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ingridients"]
+polygon = PoolVector2Array( 616, 637, 631, 629, 640, 629, 645, 625, 654, 630, 657, 635, 660, 639, 659, 649, 652, 653, 640, 654, 637, 662, 626, 656 )
+
+[node name="MoonPhase" type="Area2D" parent="."]
+script = ExtResource( 26 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoonPhase"]
+polygon = PoolVector2Array( 1177, 232, 1359, 201, 1401, 266, 1205, 277 )
+
+[node name="Map" type="Area2D" parent="."]
+script = ExtResource( 27 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map"]
+polygon = PoolVector2Array( 1042, 78, 1124, 10, 1169, 70, 1247, 29, 1230, 2, 1252, 2, 1369, 168, 1146, 220, 1117, 183, 1142, 174, 1117, 140, 1109, 141, 1087, 110, 1072, 117 )
+
+[node name="Bugg" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bugg"]
+position = Vector2( 1475, 657 )
+rotation = -0.671126
+scale = Vector2( 0.0403371, 0.0417362 )
+texture = ExtResource( 28 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bugg"]
+polygon = PoolVector2Array( 1458, 655, 1443, 656, 1455, 649, 1474, 648, 1499, 650, 1498, 665, 1487, 664, 1481, 666, 1478, 662, 1471, 663, 1470, 655, 1459, 667 )
+
+[node name="Bugg2" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bugg2"]
+position = Vector2( 489.89, 448 )
+rotation = -0.922263
+scale = Vector2( 0.0241113, 0.0242744 )
+texture = ExtResource( 28 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bugg2"]
+polygon = PoolVector2Array( 481, 450, 473, 451, 484, 444, 501, 439, 506, 444, 505, 453, 488, 454, 480, 460 )
+
+[node name="Bugg3" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bugg3"]
+position = Vector2( 65.2704, 525.405 )
+rotation = -0.922263
+scale = Vector2( 0.0308069, 0.0359449 )
+texture = ExtResource( 28 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bugg3"]
+polygon = PoolVector2Array( 53, 525, 42, 528, 53, 519, 83, 515, 84, 531, 65, 531, 61, 529, 55, 538 )
+
+[node name="EnterTheUnknown" type="Area2D" parent="."]
+script = ExtResource( 30 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnterTheUnknown"]
+polygon = PoolVector2Array( 740, 438, 740, 428, 743, 425, 751, 425, 753, 429, 754, 431, 753, 438 )
+
+[connection signal="tween_completed" from="Inspo/TextBox/Tween" to="Inspo" method="_on_Tween_tween_completed"]
+[connection signal="input_event" from="Window" to="Window" method="_on_Window_input_event"]
+[connection signal="input_event" from="CatOnBed" to="InspCounter" method="_on_CatOnBed_input_event"]
+[connection signal="input_event" from="CatOnBed" to="Inspo" method="_on_CatOnBed_input_event"]
+[connection signal="input_event" from="CatOnBed" to="CatOnBed" method="_on_CatOnBed_input_event"]
+[connection signal="input_event" from="CatOnChair" to="InspCounter" method="_on_CatOnChair_input_event"]
+[connection signal="input_event" from="CatOnChair" to="Inspo" method="_on_CatOnChair_input_event"]
+[connection signal="input_event" from="CatOnChair" to="CatOnChair" method="_on_CatOnChair_input_event"]
+[connection signal="input_event" from="Orb" to="InspCounter" method="_on_Orb_input_event"]
+[connection signal="input_event" from="Orb" to="Inspo" method="_on_Orb_input_event"]
+[connection signal="input_event" from="Orb" to="Orb" method="_on_Orb_input_event"]
+[connection signal="input_event" from="Candles" to="InspCounter" method="_on_Candles_input_event"]
+[connection signal="input_event" from="Candles" to="Inspo" method="_on_Candles_input_event"]
+[connection signal="input_event" from="Candles" to="Candles" method="_on_Candles_input_event"]
+[connection signal="input_event" from="Picture" to="InspCounter" method="_on_Picture_input_event"]
+[connection signal="input_event" from="Picture" to="Inspo" method="_on_Picture_input_event"]
+[connection signal="input_event" from="Picture" to="Picture" method="_on_Picture_input_event"]
+[connection signal="input_event" from="Medal" to="InspCounter" method="_on_Medal_input_event"]
+[connection signal="input_event" from="Medal" to="Inspo" method="_on_Medal_input_event"]
+[connection signal="input_event" from="Medal" to="Medal" method="_on_Medal_input_event"]
+[connection signal="input_event" from="Menu" to="Menu" method="_on_Menu_input_event"]
+[connection signal="input_event" from="Plants" to="InspCounter" method="_on_Plants_input_event"]
+[connection signal="input_event" from="Plants" to="Inspo" method="_on_Plants_input_event"]
+[connection signal="input_event" from="Plants" to="Plants" method="_on_Plants_input_event"]
+[connection signal="input_event" from="Easel" to="InspCounter" method="_on_Easel_input_event"]
+[connection signal="input_event" from="Easel" to="Inspo" method="_on_Easel_input_event"]
+[connection signal="input_event" from="Easel" to="Easel" method="_on_Easel_input_event"]
+[connection signal="input_event" from="Matryoshka" to="InspCounter" method="_on_Matryoshka_input_event"]
+[connection signal="input_event" from="Matryoshka" to="Inspo" method="_on_Matryoshka_input_event"]
+[connection signal="input_event" from="Matryoshka" to="Matryoshka" method="_on_Matryoshka_input_event"]
+[connection signal="input_event" from="Skull" to="InspCounter" method="_on_Skull_input_event"]
+[connection signal="input_event" from="Skull" to="Inspo" method="_on_Skull_input_event"]
+[connection signal="input_event" from="Skull" to="Skull" method="_on_Skull_input_event"]
+[connection signal="input_event" from="Couldron" to="InspCounter" method="_on_Couldron_input_event"]
+[connection signal="input_event" from="Couldron" to="Inspo" method="_on_Couldron_input_event"]
+[connection signal="input_event" from="Couldron" to="Couldron" method="_on_Couldron_input_event"]
+[connection signal="input_event" from="Crystals" to="InspCounter" method="_on_Crystals_input_event"]
+[connection signal="input_event" from="Crystals" to="Inspo" method="_on_Crystals_input_event"]
+[connection signal="input_event" from="Crystals" to="Crystals" method="_on_Crystals_input_event"]
+[connection signal="input_event" from="Tea" to="InspCounter" method="_on_Tea_input_event"]
+[connection signal="input_event" from="Tea" to="Inspo" method="_on_Tea_input_event"]
+[connection signal="input_event" from="Tea" to="Tea" method="_on_Tea_input_event"]
+[connection signal="input_event" from="Clock" to="InspCounter" method="_on_Clock_input_event"]
+[connection signal="input_event" from="Clock" to="Inspo" method="_on_Clock_input_event"]
+[connection signal="input_event" from="Clock" to="Clock" method="_on_Clock_input_event"]
+[connection signal="input_event" from="Ingridients" to="InspCounter" method="_on_Ingridients_input_event"]
+[connection signal="input_event" from="Ingridients" to="Inspo" method="_on_Ingridients_input_event"]
+[connection signal="input_event" from="Ingridients" to="Ingridients" method="_on_Ingridients_input_event"]
+[connection signal="input_event" from="MoonPhase" to="InspCounter" method="_on_MoonPhase_input_event"]
+[connection signal="input_event" from="MoonPhase" to="Inspo" method="_on_MoonPhase_input_event"]
+[connection signal="input_event" from="MoonPhase" to="MoonPhase" method="_on_MoonPhase_input_event"]
+[connection signal="input_event" from="Map" to="InspCounter" method="_on_Map_input_event"]
+[connection signal="input_event" from="Map" to="Inspo" method="_on_Map_input_event"]
+[connection signal="input_event" from="Map" to="Map" method="_on_Map_input_event"]
+[connection signal="input_event" from="Bugg" to="." method="_on_Bugg_input_event"]
+[connection signal="input_event" from="Bugg2" to="." method="_on_Bugg2_input_event"]
+[connection signal="input_event" from="Bugg3" to="." method="_on_Bugg3_input_event"]
+[connection signal="input_event" from="EnterTheUnknown" to="EnterTheUnknown" method="_on_EnterTheUnknown_input_event"]
